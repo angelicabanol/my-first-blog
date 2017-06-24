@@ -3,20 +3,12 @@
         <title>Sweetness Beginner Blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">Django Girls Blog</a></h1>
-        </div>
-
-        <div>
-            <p>published: 18.05.1986, 05:30</p>
-            <h2><a href="">Nacimiento</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus.</p>
-        </div>
-
-        <div>
-            <p>published 24.06.2017 15:01</p>
-            <h2><a href="">Un nuevo d&#237;a</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus.</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
